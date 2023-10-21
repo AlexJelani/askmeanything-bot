@@ -5,7 +5,7 @@
 }
 
 *, *::before, *::after {
-    box-sizing: border-box;  
+    box-sizing: border-box;
 }
 
 html, body {
@@ -14,7 +14,7 @@ html, body {
     font-family: 'Inter', sans-serif;
 }
 
-main {    
+main {
     background-color: slategrey;
     height: 100vh;
     display: flex;
@@ -31,18 +31,18 @@ main {
     border-radius: var(--border-rad-lg);
     display: flex;
     flex-direction: column;
-    padding: 1em;  
+    padding: 1em;
 }
 
 .chatbot-container > * {
-    padding: .5em;   
+    padding: .5em;
 }
 
 .chatbot-header {
     display: grid;
-    grid-template-areas: 'logo . .' 
+    grid-template-areas: 'logo . .'
                         'logo title supportId'
-                        'logo subtitle .';
+                        'logo subtitle clear-btn';
 }
 
 .chatbot-header > * {
@@ -57,9 +57,17 @@ main {
 .supportId {
     font-size: 10px;
     grid-area: supportId;
-    text-align: right;
+    text-align: center;
 }
-
+.clear-btn {
+    grid-area: clear-btn;
+    height: 20px;
+    padding: 0;
+    width: 80%;
+    color: var(--medium-light-text);
+    font-size: 12px;
+    margin: 0 auto;
+}
 .chatbot-conversation-container {
     max-height: 250px;
     min-height: 250px;
@@ -79,10 +87,10 @@ main {
 .speech {
     padding: 1em;
     margin: 1em auto;
-    max-width: 260px; 
+    max-width: 260px;
     color: var(--light-text);
     min-width: 100%;
-    border-radius: var(--border-rad-lg); 
+    border-radius: var(--border-rad-lg);
 }
 
 .speech:first-child {
@@ -91,12 +99,12 @@ main {
 
 .speech-ai {
 	background: #253b4b;
-    border-top-left-radius: 0; 
+    border-top-left-radius: 0;
 }
 
 .speech-human {
 	background: #24976f;
-    border-top-right-radius: 0; 
+    border-top-right-radius: 0;
 }
 
 .chatbot-input-container {
@@ -113,13 +121,13 @@ input[type="text"], button{
 input[type="text"] {
     color: #fcfcfc;
     width: 100%;
-    border-right: 0; 
+    border-right: 0;
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;
 }
 
-button {
-    border-left: 0; 
+submit-btn {
+    border-left: 0;
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
@@ -138,7 +146,7 @@ h1 {
 }
 
 h2, p {
-    color: var(--medium-light-text); 
+    color: var(--medium-light-text);
 }
 
 h2 {
