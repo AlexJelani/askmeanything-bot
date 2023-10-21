@@ -1,4 +1,6 @@
 import { Configuration, OpenAIApi } from 'openai'
+import {initializeApp} from "firebase/app";
+import {getDatabase, ref} from 'firebase/database'
 
 let openai;
 const apiUrl = import.meta.env.VITE_API_URL;
@@ -21,11 +23,20 @@ fetch(apiUrl)
 
 
 
+const appSettings = {
+    databaseURL: 'https://knowitall-bot-default-rtdb.asia-southeast1.firebasedatabase.app/'
+}
+const app = initializeApp(appSettings)
+
+const database = getDatabase(app)
+
+const conversationInDb = ref(database)
+
 const chatbotConversation = document.getElementById('chatbot-conversation')
 
 const conversationArr = [{
     role:'system',
-    content:'You are a highly knowledgeable health food assistant that gives short answers.'
+    content:'You are a highly knowledgeable assistant that gives veryshort answers.'
 }]
 
 
